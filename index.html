@@ -29,8 +29,14 @@
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/navigation-1.1/sourceembed.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -54,6 +60,11 @@ if (window.hljs) {
 
 
 
+<style type="text/css">
+#rmd-source-code {
+  display: none;
+}
+</style>
 
 
 
@@ -214,6 +225,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -241,7 +255,10 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">Home</a>
+  <a href="index.html">
+    <span class="fas fa-home"></span>
+     
+  </a>
 </li>
 <li>
   <a href="about.html">About</a>
@@ -256,6 +273,13 @@ $(document).ready(function () {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
+</ul>
+</div>
+
 
 
 <h1 class="title toc-ignore">My Website</h1>
@@ -267,6 +291,7 @@ $(document).ready(function () {
 <p>For more information about simple R Markdown websites, please read the documentation at <a href="https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html" class="uri">https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html</a>.</p>
 <p>Please also note that simple R Markdown sites are <em>not</em> based on <strong>blogdown</strong>. They are probably good for websites with only a few Rmd documents. For larger-scale and more sophisticated websites (such as blogs), you may want to use <strong>blogdown</strong> instead: <a href="https://github.com/rstudio/blogdown" class="uri">https://github.com/rstudio/blogdown</a>.</p>
 
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiTXkgV2Vic2l0ZSIKLS0tCgpIZWxsbywgV2Vic2l0ZSEKCkZvciBtb3JlIGluZm9ybWF0aW9uIGFib3V0IHNpbXBsZSBSIE1hcmtkb3duIHdlYnNpdGVzLCBwbGVhc2UgcmVhZCB0aGUgZG9jdW1lbnRhdGlvbiBhdCBodHRwczovL2Jvb2tkb3duLm9yZy95aWh1aS9ybWFya2Rvd24vcm1hcmtkb3duLXNpdGUuaHRtbC4KClBsZWFzZSBhbHNvIG5vdGUgdGhhdCBzaW1wbGUgUiBNYXJrZG93biBzaXRlcyBhcmUgX25vdF8gYmFzZWQgb24gKipibG9nZG93bioqLiBUaGV5IGFyZSBwcm9iYWJseSBnb29kIGZvciB3ZWJzaXRlcyB3aXRoIG9ubHkgYSBmZXcgUm1kIGRvY3VtZW50cy4gRm9yIGxhcmdlci1zY2FsZSBhbmQgbW9yZSBzb3BoaXN0aWNhdGVkIHdlYnNpdGVzIChzdWNoIGFzIGJsb2dzKSwgeW91IG1heSB3YW50IHRvIHVzZSAqKmJsb2dkb3duKiogaW5zdGVhZDogaHR0cHM6Ly9naXRodWIuY29tL3JzdHVkaW8vYmxvZ2Rvd24uCg==</div>
 
 
 
@@ -300,6 +325,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeSourceEmbed("index.Rmd");
+});
+</script>
 
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
