@@ -27,6 +27,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          install.packages("rmarkdown")
           source("install.R")
         shell: Rscript {0}
 
