@@ -6,8 +6,18 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
-    - text: "Example"
-      href: example.html
+    - text: "Lectures"
+      icon: fa-chalkboard-teacher
+      menu:
+        - text: "Example"
+          href: example.html
+    - text: "Labs"
+      icon: fa-laptop
+      menu:
+      - text: "Lab 1"
+        href:
+      - text: "Lab 2"
+        href:
   right:
     - icon: fab fa-github
       href: https://github.com/statOmics/Rmd-website
