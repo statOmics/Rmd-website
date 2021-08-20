@@ -8,3 +8,6 @@
 *_files/
 *_cache/
 _site/
+
+# Don't ignore these specific files
+!footer.html
