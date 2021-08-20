@@ -29,5 +29,6 @@ https://statomics.github.io/Rmd-website/
 - [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
 - [GitHub Actions for R](https://www.jimhester.com/talk/2020-rsc-github-actions/)
 - [GitHub Actions: workflows and examples by r-lib](https://github.com/r-lib/actions)
+- [rstudio4edu](https://rstudio4edu.github.io/rstudio4edu-book/)
 
 [GH-template]: https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template
