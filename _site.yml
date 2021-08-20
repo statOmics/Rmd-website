@@ -6,10 +6,20 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
-
+    - text: "Example"
+      href: example.html
+  right:
+    - icon: fab fa-github
+      href: https://github.com/statOmics/Rmd-website
 output:
   html_document:
       code_download: true
       df_print: paged
+      theme: flatly
+      highligt: tango
+      toc: true
+      toc_float: true
+      number_sections: true
+      code_folding: show
 new_session: true
 exclude: ["install.R"]

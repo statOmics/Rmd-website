@@ -1,5 +1,10 @@
 ---
 title: "My Website"
+output:
+    html_document:
+        code_download: false
+        toc: false
+        number_sections: false
 ---
 
 Hello, Website!
