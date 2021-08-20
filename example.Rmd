@@ -26,7 +26,9 @@ summary(cars)
 You can also embed plots, for example:
 
 ```{r pressure, echo=FALSE}
-plot(pressure)
+library(ggplot2)
+ggplot(mtcars, aes(mpg, disp, col = as.factor(cyl))) +
+    geom_point()
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
