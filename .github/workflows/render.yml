@@ -25,11 +25,17 @@ jobs:
       - name: Set up pandoc
         uses: r-lib/actions/setup-pandoc@master
 
-      - name: Install dependencies
+      - name: Cache Renv packages
+        uses: actions/cache@v2
+        with:
+          path: $HOME/.local/share/renv
+          key: r-${{ hashFiles('renv.lock') }}
+          restore-keys: r-
+
+      - name: Install packages
         run: |
-          install.packages("rmarkdown")
-          source("install.R")
-        shell: Rscript {0}
+          R -e 'install.packages("renv")'
+          R -e 'renv::restore()'
 
       - name: Session info
         run: |
