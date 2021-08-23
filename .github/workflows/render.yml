@@ -45,6 +45,12 @@ jobs:
           sessioninfo::session_info(pkgs, include_base = TRUE)
         shell: Rscript {0}
 
+      - name: Cache knitr results
+        uses: actions/cache@v2
+        with:
+          path: *_cache
+          key: knitr-${{ runner.os }}
+
       - name: Render site
         run: |
           rmarkdown::render_site()
