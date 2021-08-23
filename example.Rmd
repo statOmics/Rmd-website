@@ -32,3 +32,17 @@ ggplot(mtcars, aes(mpg, disp, col = as.factor(cyl))) +
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+# Caching
+
+The GHA workflow maintains cached *knitr* results between subsequent runs to
+reduce runtime. Caching can be enabled by specifying `cache=TRUE` in the code
+chunk header.
+
+__Note that this should be used with caution, as caches may become invalid when code is changed, potentially leading to unsuspected results.__
+
+```{r, cache=TRUE}
+## Run with caching enabled
+Sys.time()
+```

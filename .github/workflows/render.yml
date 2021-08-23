@@ -48,8 +48,9 @@ jobs:
       - name: Cache knitr results
         uses: actions/cache@v2
         with:
-          path: *_cache
+          path: '**/*_cache'
           key: knitr-${{ runner.os }}
+          restore-keys: knitr-
 
       - name: Render site
         run: |
