@@ -11,7 +11,7 @@
 
 
 
-<title>My Website</title>
+<title>Example</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,8 +28,12 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/navigation-1.1/sourceembed.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
@@ -59,6 +63,11 @@ if (window.hljs) {
 
 
 
+<style type="text/css">
+#rmd-source-code {
+  display: none;
+}
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -226,6 +235,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -233,6 +305,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -305,20 +387,41 @@ $(document).ready(function () {
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+<li role="separator" class="divider"></li>
+<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
 </ul>
 </div>
 
 
 
-<h1 class="title toc-ignore">My Website</h1>
-
+<h1 class="title toc-ignore">Example</h1>
+<h4 class="author">Milan Malfait</h4>
+<address class="author_afil">
+Ghent University<br>
 </div>
 
 
-<p>Hello, Website!</p>
-<p>For more information about simple R Markdown websites, please read the documentation at <a href="https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html" class="uri">https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html</a>.</p>
-<p>Please also note that simple R Markdown sites are <em>not</em> based on <strong>blogdown</strong>. They are probably good for websites with only a few Rmd documents. For larger-scale and more sophisticated websites (such as blogs), you may want to use <strong>blogdown</strong> instead: <a href="https://github.com/rstudio/blogdown" class="uri">https://github.com/rstudio/blogdown</a>.</p>
+<div id="r-markdown" class="section level1">
+<h1><span class="header-section-number">1</span> R Markdown</h1>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>When you click the <strong>Knit</strong> button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</p>
+<pre class="r"><code>summary(cars)</code></pre>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+</div>
+<div id="including-plots" class="section level1">
+<h1><span class="header-section-number">2</span> Including Plots</h1>
+<p>You can also embed plots, for example:</p>
+<p><img src="example_files/figure-html/pressure-1.png" width="672" /></p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+</div>
 
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiRXhhbXBsZSIKYXV0aG9yOiAKICAgIC0gbmFtZTogTWlsYW4gTWFsZmFpdAogICAgICBhZmZpbGlhdGlvbjogR2hlbnQgVW5pdmVyc2l0eSAKZGF0ZTogIiIKb3V0cHV0OiBodG1sX2RvY3VtZW50Ci0tLQoKYGBge3Igc2V0dXAsIGluY2x1ZGU9RkFMU0V9CmtuaXRyOjpvcHRzX2NodW5rJHNldChlY2hvID0gVFJVRSkKYGBgCgojIFIgTWFya2Rvd24KClRoaXMgaXMgYW4gUiBNYXJrZG93biBkb2N1bWVudC4gTWFya2Rvd24gaXMgYSBzaW1wbGUgZm9ybWF0dGluZyBzeW50YXggZm9yIGF1dGhvcmluZyBIVE1MLCBQREYsIGFuZCBNUyBXb3JkIGRvY3VtZW50cy4gRm9yIG1vcmUgZGV0YWlscyBvbiB1c2luZyBSIE1hcmtkb3duIHNlZSA8aHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbT4uCgpXaGVuIHlvdSBjbGljayB0aGUgKipLbml0KiogYnV0dG9uIGEgZG9jdW1lbnQgd2lsbCBiZSBnZW5lcmF0ZWQgdGhhdCBpbmNsdWRlcyBib3RoIGNvbnRlbnQgYXMgd2VsbCBhcyB0aGUgb3V0cHV0IG9mIGFueSBlbWJlZGRlZCBSIGNvZGUgY2h1bmtzIHdpdGhpbiB0aGUgZG9jdW1lbnQuIFlvdSBjYW4gZW1iZWQgYW4gUiBjb2RlIGNodW5rIGxpa2UgdGhpczoKCmBgYHtyIGNhcnN9CnN1bW1hcnkoY2FycykKYGBgCgojIEluY2x1ZGluZyBQbG90cwoKWW91IGNhbiBhbHNvIGVtYmVkIHBsb3RzLCBmb3IgZXhhbXBsZToKCmBgYHtyIHByZXNzdXJlLCBlY2hvPUZBTFNFfQpsaWJyYXJ5KGdncGxvdDIpCmdncGxvdChtdGNhcnMsIGFlcyhtcGcsIGRpc3AsIGNvbCA9IGFzLmZhY3RvcihjeWwpKSkgKwogICAgZ2VvbV9wb2ludCgpCmBgYAoKTm90ZSB0aGF0IHRoZSBgZWNobyA9IEZBTFNFYCBwYXJhbWV0ZXIgd2FzIGFkZGVkIHRvIHRoZSBjb2RlIGNodW5rIHRvIHByZXZlbnQgcHJpbnRpbmcgb2YgdGhlIFIgY29kZSB0aGF0IGdlbmVyYXRlZCB0aGUgcGxvdC4K</div>
 <div class="footer">
     <hr>
     This work is licensed under the <a href= "https://creativecommons.org/licenses/by-nc-sa/4.0">
@@ -326,6 +429,8 @@ $(document).ready(function () {
 </div>
 
 
+</div>
+</div>
 
 </div>
 
@@ -359,10 +464,40 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
+  window.initializeSourceEmbed("example.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
