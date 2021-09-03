@@ -21,6 +21,8 @@ navbar:
   right:
     - icon: fab fa-github
       href: https://github.com/statOmics/Rmd-website
+    - text: "statOmics"
+      href: http://statomics.github.io/
 output:
   html_document:
       code_download: true
