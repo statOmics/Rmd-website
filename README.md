@@ -1,5 +1,10 @@
 # Rmd-website
 
+<!-- Badge to show GHA rendering status: adapt URL to your own repo! -->
+
+[![Render and Deploy](https://github.com/statOmics/Rmd-website/workflows/Render%20and%20Deploy/badge.svg)](https://github.com/statOmics/Rmd-website/actions)
+
+
 An RMarkdown-based website rendered using GitHub Actions
 
 https://statomics.github.io/Rmd-website/

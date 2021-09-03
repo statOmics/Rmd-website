@@ -1,10 +1,7 @@
 ---
 title: "Example"
-author: 
-    - name: Milan Malfait
-      affiliation: Ghent University 
-date: ""
-output: html_document
+author: Milan Malfait, Ghent University
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
 ---
 
 ```{r setup, include=FALSE}
@@ -32,3 +29,24 @@ ggplot(mtcars, aes(mpg, disp, col = as.factor(cyl))) +
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+# Caching
+
+The GHA workflow maintains cached *knitr* results between subsequent runs to
+reduce runtime. Caching can be enabled by specifying `cache=TRUE` in the code
+chunk header.
+
+__Note that this should be used with caution, as caches may become invalid when code is changed, potentially leading to unsuspected results.__
+
+```{r, cache=TRUE}
+## Run with caching enabled
+Sys.time()
+```
+
+<!-- Include common Session Information Rmd fragment by including the following code chunk: -->
+<!-- See https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html#rmd-partials -->
+
+```{r, child="_session-info.Rmd"}
+
+```
