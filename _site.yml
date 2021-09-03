@@ -40,4 +40,4 @@ output:
     toc: false
     number_sections: true
 new_session: true
-exclude: ["install.R"]
+exclude: ["renv.lock"]
