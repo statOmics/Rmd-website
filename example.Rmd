@@ -46,3 +46,10 @@ __Note that this should be used with caution, as caches may become invalid when 
 ## Run with caching enabled
 Sys.time()
 ```
+
+<!-- Include common Session Information Rmd fragment by including the following code chunk: -->
+<!-- See https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html#rmd-partials -->
+
+```{r, child="_session-info.Rmd"}
+
+```
