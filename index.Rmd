@@ -5,6 +5,7 @@ output:
         code_download: false
         toc: false
         number_sections: false
+        code_folding: "none"
 ---
 
 Hello, Website!
