@@ -4,7 +4,6 @@ author:
     - name: Milan Malfait
       affiliation: Ghent University 
 date: ""
-output: html_document
 ---
 
 ```{r setup, include=FALSE}
