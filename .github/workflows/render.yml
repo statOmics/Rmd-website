@@ -9,7 +9,7 @@ on:
 ## Note that you can always run a GHA test without the cache by using the word
 ## "/nocache" in the commit message.
 env:
-  cache-version: 'cache-v1'
+  cache-version: 1
 
 jobs:
   render:
@@ -36,13 +36,10 @@ jobs:
         run: |
           brew install --cask xquartz
 
-      - name: Cache Renv packages
-        if: "!contains(github.event.head_commit.message, '/nocache')"
-        uses: actions/cache@v2
+      - name: Set up renv
+        uses: r-lib/actions/setup-renv@v1
         with:
-          path: $HOME/.local/share/renv
-          key: ${{ env.cache-version }}-renv-${{ hashFiles('renv.lock') }}
-          restore-keys: ${{ env.cache-version }}-renv-
+          cache-version: ${{ env.cache-version }}
 
       - name: Install packages
         run: |
@@ -62,8 +59,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: '**/*_cache'
-          key: ${{ env.cache-version }}-knitr-${{ runner.os }}
-          restore-keys: ${{ env.cache-version }}-knitr-
+          key: cache-version-${{ env.cache-version }}-knitr-${{ runner.os }}
+          restore-keys: cache-version-${{ env.cache-version }}-knitr-
 
       - name: Render site
         run: |
