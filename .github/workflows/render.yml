@@ -2,11 +2,7 @@ name: Render and Deploy
 
 on:
   push:
-    branches:
-      - master
   pull_request:
-    branches:
-      - master
 
 ## If you need to clear the cache, update the number inside cache-version as
 ## discussed at https://github.com/r-lib/actions/issues/86.
@@ -17,7 +13,7 @@ env:
 
 jobs:
   render:
-    runs-on: macOS-latest
+    runs-on: macos-latest
 
     steps:
       - name: Check out repo
@@ -75,7 +71,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Deploy 🚀
-        if: github.event_name == 'push'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
