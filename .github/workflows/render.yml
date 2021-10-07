@@ -37,7 +37,7 @@ jobs:
           brew install --cask xquartz
 
       - name: Set up renv
-        uses: r-lib/actions/setup-renv@v1
+        uses: r-lib/actions/setup-renv@master
         with:
           cache-version: ${{ env.cache-version }}
 
