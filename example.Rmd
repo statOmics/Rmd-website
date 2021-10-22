@@ -2,6 +2,10 @@
 title: "Example"
 author: Milan Malfait, Ghent University
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
+output:
+  pdf_document:
+    toc: false
+    number_sections: true
 ---
 
 ```{r setup, include=FALSE}

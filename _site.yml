@@ -36,8 +36,5 @@ output:
       include:
         after_body: footer.html
       css: style.css
-  pdf_document:
-    toc: false
-    number_sections: true
 new_session: true
 exclude: ["renv.lock"]
