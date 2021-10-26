@@ -28,7 +28,7 @@ output:
       code_download: true
       df_print: paged
       theme: flatly
-      highligt: tango
+      highlight: tango
       toc: true
       toc_float: true
       number_sections: true
