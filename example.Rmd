@@ -52,5 +52,4 @@ Sys.time()
 <!-- See https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html#rmd-partials -->
 
 ```{r, child="_session-info.Rmd"}
-
 ```
