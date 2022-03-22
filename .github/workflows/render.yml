@@ -78,7 +78,7 @@ jobs:
         if: "!contains(github.event.head_commit.message, '/complete')"
         run: |
           RMD_PATH=($(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '[.]Rmd$'))
-          Rscript -e 'for (f in commandArgs(TRUE)) if (file.exists(f)) rmarkdown::render_site(f)' ${RMD_PATH[*]}
+          Rscript -e 'for (f in commandArgs(TRUE)) if (file.exists(f)) rmarkdown::render_site(f)' ${RMD_PATH[*]} || echo "No files to render."
 
       - name: Deploy 🚀
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
