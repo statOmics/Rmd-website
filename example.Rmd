@@ -8,7 +8,7 @@ output:
     number_sections: true
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, cache=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -52,5 +52,4 @@ Sys.time()
 <!-- See https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html#rmd-partials -->
 
 ```{r, child="_session-info.Rmd"}
-
 ```

@@ -13,17 +13,18 @@ env:
 
 jobs:
   render:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check out repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
         with:
           r-version: '4.1'
-          crayon.enabled: 'FALSE'
 
       - name: Set up pandoc
         uses: r-lib/actions/setup-pandoc@v2
@@ -35,6 +36,14 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew install --cask xquartz
+
+      - name: Install curl Headers
+        if: runner.os == 'linux'
+        run: sudo apt-get install libcurl4-openssl-dev
+
+      - name: Install magick on Linux
+        if: runner.os == 'linux'
+        run: sudo apt-get -y install libmagick++-dev
 
       - name: Set up renv
         uses: r-lib/actions/setup-renv@v2
@@ -59,16 +68,22 @@ jobs:
           key: cache-version-${{ env.cache-version }}-knitr-${{ runner.os }}
           restore-keys: cache-version-${{ env.cache-version }}-knitr-
 
-      - name: Render site
+      - name: Render complete site
+        if: "contains(github.event.head_commit.message, '/complete')"
         run: |
           rmarkdown::render_site()
         shell: Rscript {0}
 
+      - name: Render updated files only
+        if: "!contains(github.event.head_commit.message, '/complete')"
+        run: |
+          RMD_PATH=($(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '[.]Rmd$')) || echo "No files to render."
+          Rscript -e 'for (f in commandArgs(TRUE)) if (file.exists(f)) rmarkdown::render_site(f)' ${RMD_PATH[*]}
+
       - name: Deploy 🚀
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        uses: JamesIves/github-pages-deploy-action@3.6.2
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
-          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: _site
 
