@@ -8,7 +8,7 @@ output:
     number_sections: true
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, cache=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
