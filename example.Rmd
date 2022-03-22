@@ -34,7 +34,6 @@ ggplot(mtcars, aes(mpg, disp, col = as.factor(cyl))) +
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-
 # Caching
 
 The GHA workflow maintains cached *knitr* results between subsequent runs to
