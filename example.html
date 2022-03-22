@@ -11,12 +11,12 @@
 
 <meta name="author" content="Milan Malfait, Ghent University" />
 
-<meta name="date" content="2022-01-27" />
+<meta name="date" content="2022-03-22" />
 
 <title>Example</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -50,6 +50,7 @@
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
     </style>
+
 
 
 <style type="text/css">
@@ -188,6 +189,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -416,7 +420,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -435,7 +439,7 @@ div.tocify {
   <a href="about.html">About</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-chalkboard-teacher"></span>
      
     Lectures
@@ -449,7 +453,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-laptop"></span>
      
     Labs
@@ -480,7 +484,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -493,7 +497,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">Example</h1>
 <h4 class="author">Milan Malfait, Ghent University</h4>
-<h4 class="date">January 27, 2022</h4>
+<h4 class="date">March 22, 2022</h4>
 
 </div>
 
@@ -523,7 +527,7 @@ div.tocify {
 <p><strong>Note that this should be used with caution, as caches may become invalid when code is changed, potentially leading to unsuspected results.</strong></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Run with caching enabled</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;2022-01-27 16:35:49 UTC&quot;</code></pre>
+<pre><code>## [1] &quot;2022-03-22 17:10:08 UTC&quot;</code></pre>
 <!-- Include common Session Information Rmd fragment by including the following code chunk: -->
 <!-- See https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html#rmd-partials -->
 </div>
@@ -533,61 +537,65 @@ div.tocify {
 <summary>
 Session info
 </summary>
-<pre><code>## [1] &quot;2022-01-27 16:35:49 UTC&quot;</code></pre>
+<pre><code>## [1] &quot;2022-03-22 17:10:08 UTC&quot;</code></pre>
 <pre><code>## ─ Session info ───────────────────────────────────────────────────────────────
 ##  setting  value
-##  version  R version 4.1.2 (2021-11-01)
-##  os       macOS Big Sur 10.16
-##  system   x86_64, darwin17.0
+##  version  R version 4.1.3 (2022-03-10)
+##  os       Ubuntu 20.04.4 LTS
+##  system   x86_64, linux-gnu
 ##  ui       X11
 ##  language (EN)
-##  collate  en_US.UTF-8
-##  ctype    en_US.UTF-8
+##  collate  C.UTF-8
+##  ctype    C.UTF-8
 ##  tz       UTC
-##  date     2022-01-27
-##  pandoc   2.14.2 @ /usr/local/bin/ (via rmarkdown)
+##  date     2022-03-22
+##  pandoc   2.14.2 @ /usr/bin/ (via rmarkdown)
 ## 
 ## ─ Packages ───────────────────────────────────────────────────────────────────
 ##  ! package     * version date (UTC) lib source
-##  P cli           3.1.1   2022-01-20 [?] CRAN (R 4.1.2)
-##    codetools     0.2-18  2020-11-04 [2] CRAN (R 4.1.2)
-##  P colorspace    2.0-2   2021-06-24 [?] CRAN (R 4.1.0)
-##  P crayon        1.4.1   2021-02-08 [?] CRAN (R 4.1.0)
-##  P digest        0.6.27  2020-10-24 [?] CRAN (R 4.1.0)
-##  P ellipsis      0.3.2   2021-04-29 [?] CRAN (R 4.1.0)
-##  P evaluate      0.14    2019-05-28 [?] CRAN (R 4.1.0)
-##  P fansi         0.5.0   2021-05-25 [?] CRAN (R 4.1.0)
-##  P farver        2.1.0   2021-02-28 [?] CRAN (R 4.1.0)
-##  P fastmap       1.1.0   2021-01-25 [?] CRAN (R 4.1.0)
-##  P ggplot2     * 3.3.5   2021-06-25 [?] CRAN (R 4.1.0)
-##  P glue          1.4.2   2020-08-27 [?] CRAN (R 4.1.0)
-##  P gtable        0.3.0   2019-03-25 [?] CRAN (R 4.1.0)
-##  P highr         0.9     2021-04-16 [?] CRAN (R 4.1.0)
-##  P htmltools     0.5.2   2021-08-25 [?] CRAN (R 4.1.0)
-##  P knitr         1.33    2021-04-24 [?] CRAN (R 4.1.0)
-##  P labeling      0.4.2   2020-10-20 [?] CRAN (R 4.1.0)
-##  P lifecycle     1.0.0   2021-02-15 [?] CRAN (R 4.1.0)
-##  P magrittr      2.0.1   2020-11-17 [?] CRAN (R 4.1.0)
-##  P munsell       0.5.0   2018-06-12 [?] CRAN (R 4.1.0)
-##  P pillar        1.6.2   2021-07-29 [?] CRAN (R 4.1.0)
-##  P pkgconfig     2.0.3   2022-01-26 [?] Github (r-lib/pkgconfig@b81ae03)
-##  P R6            2.5.1   2021-08-19 [?] CRAN (R 4.1.0)
-##  P renv          0.15.2  2022-01-24 [?] CRAN (R 4.1.2)
-##  P rlang         0.4.11  2021-04-30 [?] CRAN (R 4.1.0)
-##  P rmarkdown     2.10    2021-08-06 [?] CRAN (R 4.1.0)
-##  P scales        1.1.1   2020-05-11 [?] CRAN (R 4.1.0)
-##  P sessioninfo   1.2.2   2021-12-06 [?] CRAN (R 4.1.0)
-##  P stringi       1.7.4   2021-08-25 [?] CRAN (R 4.1.0)
-##  P stringr       1.4.0   2019-02-10 [?] CRAN (R 4.1.0)
-##  P tibble        3.1.4   2021-08-25 [?] CRAN (R 4.1.0)
-##  P utf8          1.2.2   2021-07-24 [?] CRAN (R 4.1.0)
-##  P vctrs         0.3.8   2021-04-29 [?] CRAN (R 4.1.0)
-##  P withr         2.4.2   2021-04-18 [?] CRAN (R 4.1.0)
-##  P xfun          0.25    2021-08-06 [?] CRAN (R 4.1.0)
-##  P yaml          2.2.1   2020-02-01 [?] CRAN (R 4.1.0)
+##  P bslib         0.3.1   2021-10-06 [?] CRAN (R 4.1.3)
+##  P cli           3.2.0   2022-02-14 [?] CRAN (R 4.1.3)
+##    codetools     0.2-18  2020-11-04 [2] CRAN (R 4.1.3)
+##  P colorspace    2.0-3   2022-02-21 [?] CRAN (R 4.1.3)
+##  P crayon        1.5.0   2022-02-14 [?] CRAN (R 4.1.3)
+##  P digest        0.6.29  2021-12-01 [?] CRAN (R 4.1.3)
+##  P ellipsis      0.3.2   2021-04-29 [?] CRAN (R 4.1.3)
+##  P evaluate      0.15    2022-02-18 [?] CRAN (R 4.1.3)
+##  P fansi         1.0.2   2022-01-14 [?] CRAN (R 4.1.3)
+##  P farver        2.1.0   2021-02-28 [?] CRAN (R 4.1.3)
+##  P fastmap       1.1.0   2021-01-25 [?] CRAN (R 4.1.3)
+##  P ggplot2     * 3.3.5   2021-06-25 [?] CRAN (R 4.1.3)
+##  P glue          1.6.2   2022-02-24 [?] CRAN (R 4.1.3)
+##  P gtable        0.3.0   2019-03-25 [?] CRAN (R 4.1.3)
+##  P highr         0.9     2021-04-16 [?] CRAN (R 4.1.3)
+##  P htmltools     0.5.2   2021-08-25 [?] CRAN (R 4.1.3)
+##  P jquerylib     0.1.4   2021-04-26 [?] CRAN (R 4.1.3)
+##  P jsonlite      1.8.0   2022-02-22 [?] CRAN (R 4.1.3)
+##  P knitr         1.37    2021-12-16 [?] CRAN (R 4.1.3)
+##  P labeling      0.4.2   2020-10-20 [?] CRAN (R 4.1.3)
+##  P lifecycle     1.0.1   2021-09-24 [?] CRAN (R 4.1.3)
+##  P magrittr      2.0.2   2022-01-26 [?] CRAN (R 4.1.3)
+##  P munsell       0.5.0   2018-06-12 [?] CRAN (R 4.1.3)
+##  P pillar        1.7.0   2022-02-01 [?] CRAN (R 4.1.3)
+##  P pkgconfig     2.0.3   2022-03-22 [?] Github (r-lib/pkgconfig@b81ae03)
+##  P R6            2.5.1   2021-08-19 [?] CRAN (R 4.1.3)
+##  P renv          0.15.4  2022-03-03 [?] CRAN (R 4.1.3)
+##  P rlang         1.0.2   2022-03-04 [?] CRAN (R 4.1.3)
+##  P rmarkdown     2.13    2022-03-10 [?] CRAN (R 4.1.3)
+##  P sass          0.4.0   2021-05-12 [?] CRAN (R 4.1.3)
+##  P scales        1.1.1   2020-05-11 [?] CRAN (R 4.1.3)
+##  P sessioninfo   1.2.2   2021-12-06 [?] CRAN (R 4.1.3)
+##  P stringi       1.7.6   2021-11-29 [?] CRAN (R 4.1.3)
+##  P stringr       1.4.0   2019-02-10 [?] CRAN (R 4.1.3)
+##  P tibble        3.1.6   2021-11-07 [?] CRAN (R 4.1.3)
+##  P utf8          1.2.2   2021-07-24 [?] CRAN (R 4.1.3)
+##  P vctrs         0.3.8   2021-04-29 [?] CRAN (R 4.1.3)
+##  P withr         2.5.0   2022-03-03 [?] CRAN (R 4.1.3)
+##  P xfun          0.30    2022-03-02 [?] CRAN (R 4.1.3)
+##  P yaml          2.3.5   2022-02-21 [?] CRAN (R 4.1.3)
 ## 
-##  [1] /Users/runner/work/Rmd-website/Rmd-website/renv/library/R-4.1/x86_64-apple-darwin17.0
-##  [2] /Library/Frameworks/R.framework/Versions/4.1/Resources/library
+##  [1] /home/runner/work/Rmd-website/Rmd-website/renv/library/R-4.1/x86_64-pc-linux-gnu
+##  [2] /opt/R/4.1.3/lib/R/library
 ## 
 ##  P ── Loaded and on-disk path mismatch.
 ## 
@@ -595,7 +603,7 @@ Session info
 </details>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiRXhhbXBsZSIKYXV0aG9yOiBNaWxhbiBNYWxmYWl0LCBHaGVudCBVbml2ZXJzaXR5CmRhdGU6ICdgciBmb3JtYXQoU3lzLkRhdGUoKSwgIiVCICVkLCAlWSIpYCcKb3V0cHV0OgogIHBkZl9kb2N1bWVudDoKICAgIHRvYzogZmFsc2UKICAgIG51bWJlcl9zZWN0aW9uczogdHJ1ZQotLS0KCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFfQprbml0cjo6b3B0c19jaHVuayRzZXQoZWNobyA9IFRSVUUpCmBgYAoKIyBSIE1hcmtkb3duCgpUaGlzIGlzIGFuIFIgTWFya2Rvd24gZG9jdW1lbnQuIE1hcmtkb3duIGlzIGEgc2ltcGxlIGZvcm1hdHRpbmcgc3ludGF4IGZvciBhdXRob3JpbmcgSFRNTCwgUERGLCBhbmQgTVMgV29yZCBkb2N1bWVudHMuIEZvciBtb3JlIGRldGFpbHMgb24gdXNpbmcgUiBNYXJrZG93biBzZWUgPGh0dHA6Ly9ybWFya2Rvd24ucnN0dWRpby5jb20+LgoKV2hlbiB5b3UgY2xpY2sgdGhlICoqS25pdCoqIGJ1dHRvbiBhIGRvY3VtZW50IHdpbGwgYmUgZ2VuZXJhdGVkIHRoYXQgaW5jbHVkZXMgYm90aCBjb250ZW50IGFzIHdlbGwgYXMgdGhlIG91dHB1dCBvZiBhbnkgZW1iZWRkZWQgUiBjb2RlIGNodW5rcyB3aXRoaW4gdGhlIGRvY3VtZW50LiBZb3UgY2FuIGVtYmVkIGFuIFIgY29kZSBjaHVuayBsaWtlIHRoaXM6CgpgYGB7ciBjYXJzfQpzdW1tYXJ5KGNhcnMpCmBgYAoKIyBJbmNsdWRpbmcgUGxvdHMKCllvdSBjYW4gYWxzbyBlbWJlZCBwbG90cywgZm9yIGV4YW1wbGU6CgpgYGB7ciBwcmVzc3VyZSwgZWNobz1GQUxTRX0KbGlicmFyeShnZ3Bsb3QyKQpnZ3Bsb3QobXRjYXJzLCBhZXMobXBnLCBkaXNwLCBjb2wgPSBhcy5mYWN0b3IoY3lsKSkpICsKICAgIGdlb21fcG9pbnQoKQpgYGAKCk5vdGUgdGhhdCB0aGUgYGVjaG8gPSBGQUxTRWAgcGFyYW1ldGVyIHdhcyBhZGRlZCB0byB0aGUgY29kZSBjaHVuayB0byBwcmV2ZW50IHByaW50aW5nIG9mIHRoZSBSIGNvZGUgdGhhdCBnZW5lcmF0ZWQgdGhlIHBsb3QuCgoKIyBDYWNoaW5nCgpUaGUgR0hBIHdvcmtmbG93IG1haW50YWlucyBjYWNoZWQgKmtuaXRyKiByZXN1bHRzIGJldHdlZW4gc3Vic2VxdWVudCBydW5zIHRvCnJlZHVjZSBydW50aW1lLiBDYWNoaW5nIGNhbiBiZSBlbmFibGVkIGJ5IHNwZWNpZnlpbmcgYGNhY2hlPVRSVUVgIGluIHRoZSBjb2RlCmNodW5rIGhlYWRlci4KCl9fTm90ZSB0aGF0IHRoaXMgc2hvdWxkIGJlIHVzZWQgd2l0aCBjYXV0aW9uLCBhcyBjYWNoZXMgbWF5IGJlY29tZSBpbnZhbGlkIHdoZW4gY29kZSBpcyBjaGFuZ2VkLCBwb3RlbnRpYWxseSBsZWFkaW5nIHRvIHVuc3VzcGVjdGVkIHJlc3VsdHMuX18KCmBgYHtyLCBjYWNoZT1UUlVFfQojIyBSdW4gd2l0aCBjYWNoaW5nIGVuYWJsZWQKU3lzLnRpbWUoKQpgYGAKCjwhLS0gSW5jbHVkZSBjb21tb24gU2Vzc2lvbiBJbmZvcm1hdGlvbiBSbWQgZnJhZ21lbnQgYnkgaW5jbHVkaW5nIHRoZSBmb2xsb3dpbmcgY29kZSBjaHVuazogLS0+CjwhLS0gU2VlIGh0dHBzOi8vYm9va2Rvd24ub3JnL3lpaHVpL3JtYXJrZG93bi9ybWFya2Rvd24tc2l0ZS5odG1sI3JtZC1wYXJ0aWFscyAtLT4KCmBgYHtyLCBjaGlsZD0iX3Nlc3Npb24taW5mby5SbWQifQoKYGBgCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiRXhhbXBsZSIKYXV0aG9yOiBNaWxhbiBNYWxmYWl0LCBHaGVudCBVbml2ZXJzaXR5CmRhdGU6ICdgciBmb3JtYXQoU3lzLkRhdGUoKSwgIiVCICVkLCAlWSIpYCcKb3V0cHV0OgogIHBkZl9kb2N1bWVudDoKICAgIHRvYzogZmFsc2UKICAgIG51bWJlcl9zZWN0aW9uczogdHJ1ZQotLS0KCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFLCBjYWNoZT1GQUxTRX0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBUUlVFKQpgYGAKCiMgUiBNYXJrZG93bgoKVGhpcyBpcyBhbiBSIE1hcmtkb3duIGRvY3VtZW50LiBNYXJrZG93biBpcyBhIHNpbXBsZSBmb3JtYXR0aW5nIHN5bnRheCBmb3IgYXV0aG9yaW5nIEhUTUwsIFBERiwgYW5kIE1TIFdvcmQgZG9jdW1lbnRzLiBGb3IgbW9yZSBkZXRhaWxzIG9uIHVzaW5nIFIgTWFya2Rvd24gc2VlIDxodHRwOi8vcm1hcmtkb3duLnJzdHVkaW8uY29tPi4KCldoZW4geW91IGNsaWNrIHRoZSAqKktuaXQqKiBidXR0b24gYSBkb2N1bWVudCB3aWxsIGJlIGdlbmVyYXRlZCB0aGF0IGluY2x1ZGVzIGJvdGggY29udGVudCBhcyB3ZWxsIGFzIHRoZSBvdXRwdXQgb2YgYW55IGVtYmVkZGVkIFIgY29kZSBjaHVua3Mgd2l0aGluIHRoZSBkb2N1bWVudC4gWW91IGNhbiBlbWJlZCBhbiBSIGNvZGUgY2h1bmsgbGlrZSB0aGlzOgoKYGBge3IgY2Fyc30Kc3VtbWFyeShjYXJzKQpgYGAKCiMgSW5jbHVkaW5nIFBsb3RzCgpZb3UgY2FuIGFsc28gZW1iZWQgcGxvdHMsIGZvciBleGFtcGxlOgoKYGBge3IgcHJlc3N1cmUsIGVjaG89RkFMU0V9CmxpYnJhcnkoZ2dwbG90MikKZ2dwbG90KG10Y2FycywgYWVzKG1wZywgZGlzcCwgY29sID0gYXMuZmFjdG9yKGN5bCkpKSArCiAgICBnZW9tX3BvaW50KCkKYGBgCgpOb3RlIHRoYXQgdGhlIGBlY2hvID0gRkFMU0VgIHBhcmFtZXRlciB3YXMgYWRkZWQgdG8gdGhlIGNvZGUgY2h1bmsgdG8gcHJldmVudCBwcmludGluZyBvZiB0aGUgUiBjb2RlIHRoYXQgZ2VuZXJhdGVkIHRoZSBwbG90LgoKCiMgQ2FjaGluZwoKVGhlIEdIQSB3b3JrZmxvdyBtYWludGFpbnMgY2FjaGVkICprbml0ciogcmVzdWx0cyBiZXR3ZWVuIHN1YnNlcXVlbnQgcnVucyB0bwpyZWR1Y2UgcnVudGltZS4gQ2FjaGluZyBjYW4gYmUgZW5hYmxlZCBieSBzcGVjaWZ5aW5nIGBjYWNoZT1UUlVFYCBpbiB0aGUgY29kZQpjaHVuayBoZWFkZXIuCgpfX05vdGUgdGhhdCB0aGlzIHNob3VsZCBiZSB1c2VkIHdpdGggY2F1dGlvbiwgYXMgY2FjaGVzIG1heSBiZWNvbWUgaW52YWxpZCB3aGVuIGNvZGUgaXMgY2hhbmdlZCwgcG90ZW50aWFsbHkgbGVhZGluZyB0byB1bnN1c3BlY3RlZCByZXN1bHRzLl9fCgpgYGB7ciwgY2FjaGU9VFJVRX0KIyMgUnVuIHdpdGggY2FjaGluZyBlbmFibGVkClN5cy50aW1lKCkKYGBgCgo8IS0tIEluY2x1ZGUgY29tbW9uIFNlc3Npb24gSW5mb3JtYXRpb24gUm1kIGZyYWdtZW50IGJ5IGluY2x1ZGluZyB0aGUgZm9sbG93aW5nIGNvZGUgY2h1bms6IC0tPgo8IS0tIFNlZSBodHRwczovL2Jvb2tkb3duLm9yZy95aWh1aS9ybWFya2Rvd24vcm1hcmtkb3duLXNpdGUuaHRtbCNybWQtcGFydGlhbHMgLS0+CgpgYGB7ciwgY2hpbGQ9Il9zZXNzaW9uLWluZm8uUm1kIn0KYGBgCg==</div>
 <div class="footer">
     <hr>
     This work is licensed under the <a href= "https://creativecommons.org/licenses/by-nc-sa/4.0">
